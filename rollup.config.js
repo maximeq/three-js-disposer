@@ -6,7 +6,7 @@ import { uglify } from "rollup-plugin-uglify";
 export default {
     input: './src/disposer.js',
     output: {
-        file: './dist/browser/three-disposer.js',
+        file: './dist/browser/three-js-disposer.js',
         format: 'cjs'
     },
     external: ['three-full'],

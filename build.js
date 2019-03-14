@@ -6,8 +6,8 @@ var terser = require('rollup-plugin-terser').terser; // minify
 var prettier = require('rollup-plugin-prettier');
 
 // clean previous build
-fs.removeSync('/dist/three-disposer.js')
-fs.removeSync('/dist/three-disposer.min.js')
+fs.removeSync('/dist/browser/three-js-disposer.js')
+fs.removeSync('/dist/browser/three-js-disposer.min.js')
 
 async function build(inputOptions, outputOptions) {
     // create a bundle
@@ -31,7 +31,7 @@ build({
 }, {
     format: 'umd',
     name: 'THREEDisposer',
-    file: './dist/browser/three-disposer.js',
+    file: './dist/browser/three-js-disposer.js',
     globals: {
         'three-full/builds/Three.cjs.js' : 'THREE'
     }
@@ -59,7 +59,7 @@ build({
 }, {
     format: 'umd',
     name: 'THREEDisposer',
-    file: './dist/browser/three-disposer.min.js',
+    file: './dist/browser/three-js-disposer.min.js',
     globals: {
         'three-full/builds/Three.cjs.js' : 'THREE'
     }
