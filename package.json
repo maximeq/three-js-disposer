@@ -1,6 +1,6 @@
 {
   "name": "three-js-disposer",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Function to clean up a whole Object3D hierarchy in THREE.JS",
   "main": "src/disposer.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "rollup-plugin-prettier": "^0.6.0",
-    "three-full": "^11.3.2"
+    "three-full": "16.0.1"
   },
   "devDependencies": {
     "fs-extra": "^7.0.1",
@@ -25,5 +25,6 @@
   "browser": "./dist/browser/three-disposer.js",
   "author": "Maxime Quiblier <maximequiblier@gmail.com>",
   "license": "MIT",
-  "hash": "cbb66061ffd05bc5f6673756895b3f6f03e7202a"
+  "hash": "cbb66061ffd05bc5f6673756895b3f6f03e7202a",
+  "private":false
 }
