@@ -27,13 +27,13 @@ async function build(inputOptions, outputOptions) {
 build({
     input: 'src/disposer.js',
     plugins:  [ commonjs(), resolve() ],
-    external: [ 'three-full/builds/Three.cjs.js' ],
+    external: [ 'three-full' ],
 }, {
     format: 'umd',
     name: 'THREEDisposer',
     file: './dist/browser/three-js-disposer.js',
     globals: {
-        'three-full/builds/Three.cjs.js' : 'THREE'
+        'three-full' : 'THREE'
     }
 });
 
@@ -55,13 +55,13 @@ build({
           bracketSpacing:false
         })
     ],
-    external: [ 'three-full/builds/Three.cjs.js' ],
+    external: [ 'three-full' ],
 }, {
     format: 'umd',
     name: 'THREEDisposer',
     file: './dist/browser/three-js-disposer.min.js',
     globals: {
-        'three-full/builds/Three.cjs.js' : 'THREE'
+        'three-full' : 'THREE'
     }
 });
 

@@ -1,10 +1,10 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('three-full/builds/Three.cjs.js')) :
-    typeof define === 'function' && define.amd ? define(['three-full/builds/Three.cjs.js'], factory) :
+    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('three-full')) :
+    typeof define === 'function' && define.amd ? define(['three-full'], factory) :
     (global.THREEDisposer = factory(global.THREE));
-}(this, (function (Three_cjs) { 'use strict';
+}(this, (function (threeFull) { 'use strict';
 
-    Three_cjs = Three_cjs && Three_cjs.hasOwnProperty('default') ? Three_cjs['default'] : Three_cjs;
+    threeFull = threeFull && threeFull.hasOwnProperty('default') ? threeFull['default'] : threeFull;
 
     var Disposer = function(){};
 
@@ -64,7 +64,7 @@
 
     })();
 
-    Three_cjs.Disposer = Disposer;
+    threeFull.Disposer = Disposer;
 
     var disposer = Disposer;
 
