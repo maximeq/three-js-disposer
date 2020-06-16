@@ -1,6 +1,6 @@
 {
   "name": "three-js-disposer",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Function to clean up a whole Object3D hierarchy in THREE.JS",
   "main": "src/disposer.js",
   "scripts": {
@@ -8,12 +8,12 @@
     "build": "node build.js"
   },
   "dependencies": {
-    "rollup-plugin-prettier": "^0.6.0",
     "three-full": "16.0.1"
   },
   "devDependencies": {
     "fs-extra": "^7.0.1",
     "rollup": "^0.67.1",
+    "rollup-plugin-prettier": "^0.6.0",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^3.4.0",
     "rollup-plugin-terser": "^3.0.0"
