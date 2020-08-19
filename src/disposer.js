@@ -7,7 +7,7 @@ Disposer.prototype.constructor = Disposer;
 
 Disposer.prototype.disposeOnCascade = (function(){
     function disposeNode(node){
-        if (node instanceof Mesh)
+        if (node instanceof THREE.Mesh)
         {
             if (node.geometry)
             {

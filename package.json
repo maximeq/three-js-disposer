@@ -1,6 +1,6 @@
 {
   "name": "three-js-disposer",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Function to clean up a whole Object3D hierarchy in THREE.JS",
   "main": "src/disposer.js",
   "scripts": {
