@@ -1,4 +1,4 @@
-three-js-blobtree
+three-js-disposer
 ================
 
 [![License][license-badge]][license-badge-url]
