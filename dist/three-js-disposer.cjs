@@ -1,5 +1,44 @@
+'use strict';
 
-const THREE = require("three");
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var require$$0 = require('three');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var require$$0__default = /*#__PURE__*/_interopDefaultLegacy(require$$0);
+
+function checkDependancy(packageName, dependancyName, dependancy) {
+    let duplicationMessage = `${packageName}: ${dependancyName} is duplicated. Your bundle includes ${dependancyName} twice. Please repair your bundle.`;
+    try {
+        if (THREE[dependancyName] === undefined) {
+            THREE[dependancyName] = dependancy;
+            return;
+        }
+
+        if (THREE[dependancyName] !== dependancy) {
+            throw duplicationMessage;
+        }
+    } catch (error) {
+        if (error !== duplicationMessage) {
+            console.warn(
+                `${packageName}: Duplication check unavailable.` + error
+            );
+        } else {
+            throw error;
+        }
+    }
+}
+
+function checkThreeRevision(packageName, revision) {
+    if (THREE.REVISION != revision) {
+        console.error(
+            `${packageName} depends on THREE revision ${revision}, but current revision is ${THREE.REVISION}.`
+        );
+    }
+}
+
+const THREE$1 = require$$0__default["default"];
 
 var Disposer = function(){};
 
@@ -7,7 +46,7 @@ Disposer.prototype.constructor = Disposer;
 
 Disposer.prototype.disposeOnCascade = (function(){
     function disposeNode(node){
-        if (node instanceof THREE.Mesh)
+        if (node instanceof THREE$1.Mesh)
         {
             if (node.geometry)
             {
@@ -59,4 +98,16 @@ Disposer.prototype.disposeOnCascade = (function(){
 
 })();
 
-module.exports = Disposer;
+var disposer = Disposer;
+
+/*
+ * This file encapsulates the xthree library.
+ * It checks if the needed three examples and the library are duplicated.
+ */
+
+const PACKAGE_NAME = "three-js-disposer";
+
+checkThreeRevision(PACKAGE_NAME, 130);
+checkDependancy(PACKAGE_NAME, "Disposer", disposer);
+
+exports.Disposer = disposer;
