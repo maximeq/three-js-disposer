@@ -1,5 +1,7 @@
+import { Object3D } from 'three';
+
 declare class Disposer {
-    disposeOnCascade: (o: any) => void;
+    disposeOnCascade: (o: Object3D) => void;
 }
 
 export { Disposer };

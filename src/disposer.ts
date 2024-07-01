@@ -1,9 +1,8 @@
-
-import { Mesh } from "three"
+import { Mesh, type Object3D } from "three";
 
 export class Disposer {
     disposeOnCascade = (function () {
-        function disposeNode(node) {
+        function disposeNode(node: Object3D) {
             if (node instanceof Mesh) {
                 if (node.geometry) {
                     node.geometry.dispose();
@@ -11,8 +10,8 @@ export class Disposer {
 
                 if (node.material) {
                     if (node.material && node.material.materials) {
-                        for (var i = 0; i < node.material.materials.length; ++i) {
-                            mtrl = node.material.materials[i];
+                        for (let i = 0; i < node.material.materials.length; ++i) {
+                            const mtrl = node.material.materials[i];
                             if (mtrl.map) mtrl.map.dispose();
                             if (mtrl.lightMap) mtrl.lightMap.dispose();
                             if (mtrl.bumpMap) mtrl.bumpMap.dispose();
@@ -37,7 +36,7 @@ export class Disposer {
             }
         }   // disposeNode
 
-        function disposeHierarchy(node, callback) {
+        function disposeHierarchy(node: Object3D, callback: (node: Object3D) => void) {
             for (var i = node.children.length - 1; i >= 0; i--) {
                 var child = node.children[i];
                 disposeHierarchy(child, callback);
@@ -45,7 +44,7 @@ export class Disposer {
             }
         }
 
-        return function (o) {
+        return function (o: Object3D) {
             disposeHierarchy(o, disposeNode);
         };
 

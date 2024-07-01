@@ -1,1 +1,1 @@
-{"version":3,"file":"disposer.d.ts","sourceRoot":"","sources":["../../src/disposer.ts"],"names":[],"mappings":"AAGA,qBAAa,QAAQ;IACjB,gBAAgB,mBA+CX;CACR"}
+{"version":3,"file":"disposer.d.ts","sourceRoot":"","sources":["../../src/disposer.ts"],"names":[],"mappings":"AAAA,OAAO,EAAQ,KAAK,QAAQ,EAAE,MAAM,OAAO,CAAC;AAE5C,qBAAa,QAAQ;IACjB,gBAAgB,MA2CQ,QAAQ,UAG3B;CACR"}

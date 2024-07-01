@@ -18,7 +18,8 @@
     "rollup": "^4.13.2",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-dts": "^6.1.0",
-    "tslib": "^2.6.2"
+    "tslib": "^2.6.2",
+    "@types/three": "0.130.x"
   },
   "files": [
     "dist/*"
