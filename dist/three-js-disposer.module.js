@@ -9,8 +9,8 @@ class Disposer {
                 }
                 if (node.material) {
                     if (node.material && node.material.materials) {
-                        for (var i = 0; i < node.material.materials.length; ++i) {
-                            mtrl = node.material.materials[i];
+                        for (let i = 0; i < node.material.materials.length; ++i) {
+                            const mtrl = node.material.materials[i];
                             if (mtrl.map)
                                 mtrl.map.dispose();
                             if (mtrl.lightMap)
